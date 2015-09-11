@@ -15,6 +15,9 @@ public class MainActivity extends Activity {
     private AnimatedVectorDrawable crossToCheck;
     private boolean check = true;
 
+    private ImageView hexagon;
+    private AnimatedVectorDrawable hexagonPath;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,11 +26,20 @@ public class MainActivity extends Activity {
         checkCross = (ImageView) findViewById(R.id.check_cross);
         checkToCross = (AnimatedVectorDrawable) getDrawable(R.drawable.avd_check_to_cross);
         crossToCheck = (AnimatedVectorDrawable) getDrawable(R.drawable.avd_cross_to_check);
-
         checkCross.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 animateCheckCross();
+            }
+        });
+
+
+        hexagon = (ImageView) findViewById(R.id.hexagon);
+        hexagonPath = (AnimatedVectorDrawable) getDrawable(R.drawable.avd_hexagon);
+        hexagon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                animateHexagon();
             }
         });
     }
@@ -38,6 +50,13 @@ public class MainActivity extends Activity {
         checkCross.setImageDrawable(drawable);
         drawable.start();
         check = !check;
+    }
+
+    public void animateHexagon() {
+        if(hexagonPath != null) {
+            hexagon.setImageDrawable(hexagonPath);
+            hexagonPath.start();
+        }
     }
 
 
