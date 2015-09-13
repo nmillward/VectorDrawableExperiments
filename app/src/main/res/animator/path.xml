@@ -5,6 +5,6 @@
     android:valueTo="1"
     android:duration="@integer/path_duration"
     android:valueType="floatType"
-    android:interpolator="@android:interpolator/linear">
+    android:interpolator="@android:interpolator/fast_out_slow_in">
 
 </objectAnimator>

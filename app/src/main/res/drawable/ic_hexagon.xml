@@ -6,7 +6,9 @@
         android:viewportWidth="@integer/viewport_width">
 
     <group
-        android:name="@string/groupHexagon">
+        android:name="@string/groupHexagon"
+        android:pivotX="@integer/viewport_center_x"
+        android:pivotY="@integer/viewport_center_y">
 
         <path
             android:name="@string/hexagon"
